@@ -14,7 +14,6 @@ const Input = ({ name, label, value, error, ...rest }) => {
         isValid={value && !error}
         isInvalid={error}
       ></Form.Control>
-      <Form.Control.Feedback type="invalid">{error}</Form.Control.Feedback>
     </Form.Group>
   );
 };

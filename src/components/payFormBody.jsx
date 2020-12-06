@@ -3,7 +3,6 @@ import Joi from "joi-browser";
 import { Container, Form, Modal, Button } from "react-bootstrap";
 import SweetAlert from "react-bootstrap-sweetalert";
 import MyForm from "./common/form";
-import { Link } from "react-router-dom";
 
 class PayFormBody extends MyForm {
   state = {

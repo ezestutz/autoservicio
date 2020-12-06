@@ -1,0 +1,38 @@
+.portada {
+  position: relative;
+  height: 100vh;
+  text-align: center;
+  background-image: url("../img/portada.png");
+  background-size: cover;
+  background-position: center;
+}
+
+@media screen and (max-width: 1400px) {
+  .portada {
+    background-image: url("../img/portada-mobile.png");
+  }
+}
+
+.portadaLogo {
+  position: absolute;
+  width: 10%;
+  top: 2%;
+  left: 2%;
+}
+
+.portadaButton {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  border-radius: 0px;
+  background-color: #ff326a;
+  color: white;
+  font-size: 1.2rem;
+  padding: 0.5rem 2rem;
+  border: 0px;
+}
+.portadaButton:hover {
+  background-color: #f84d7a;
+}

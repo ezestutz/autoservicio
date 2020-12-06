@@ -1,0 +1,79 @@
+.categories .banner {
+  background-image: url("../img/banner1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 0;
+  padding-top: 10%;
+}
+
+.categories .bannerLogo {
+  position: absolute;
+  top: 1%;
+  left: 5%;
+  width: 7.5%;
+  min-width: 40px;
+}
+
+@media screen and (max-width: 950px) {
+  .categories .banner {
+    background-image: url("../img/baner-mobile1.png");
+    padding-top: 10rem !important;
+  }
+  .categories .bannerLogo {
+    top: 2.5%;
+    width: 100px !important;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .categories .bannerLogo {
+    top: 1% !important;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .categories .banner {
+    padding-top: 8rem !important;
+  }
+  .categories .bannerLogo {
+    top: 1.5% !important;
+    width: 10% !important;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .categories .banner {
+    padding-top: 6rem !important;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .categories .banner {
+    padding-top: 5rem !important;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .categories .banner {
+    padding-top: 4rem !important;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+.opcionLink {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.opcionLink:hover {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.opcionCard:hover {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}

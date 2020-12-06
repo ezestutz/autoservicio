@@ -1,0 +1,104 @@
+.category .banner {
+  background-image: url("../img/banner2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 0;
+  padding-top: 10%;
+}
+
+.category .bannerLogo {
+  position: absolute;
+  top: 1%;
+  left: 5%;
+  width: 7.5%;
+  min-width: 40px;
+}
+
+@media screen and (max-width: 950px) {
+  .category .banner {
+    background-image: url("../img/baner-mobile2.png");
+    padding-top: 10rem !important;
+  }
+  .category .bannerLogo {
+    top: 2.5%;
+    width: 100px !important;
+  }
+  .selectedCategory {
+    width: auto !important;
+    height: 10rem;
+  }
+  .selectedCategoryContainer {
+    overflow-x: scroll;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .category .bannerLogo {
+    top: 1% !important;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .category .banner {
+    padding-top: 8rem !important;
+  }
+  .category .bannerLogo {
+    top: 1.5% !important;
+    width: 10% !important;
+  }
+  .selectedCategory {
+    height: 8rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .category .banner {
+    padding-top: 6rem !important;
+  }
+  .selectedCategory {
+    height: 6rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .category .banner {
+    padding-top: 5rem !important;
+  }
+  .selectedCategory {
+    height: 5rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .category .banner {
+    padding-top: 4rem !important;
+  }
+  .selectedCategory {
+    height: 4rem;
+  }
+}
+
+.selectedCategory {
+  width: 100%;
+  min-height: 100px;
+  overflow-x: scroll;
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+.opcionLink {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.opcionLink:hover {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.opcionCard:hover {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}

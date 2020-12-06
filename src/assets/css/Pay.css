@@ -1,0 +1,11 @@
+.pagar {
+  background: linear-gradient(to right, #016fca, #1296d0);
+}
+
+.portadaLogo {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  width: 5%;
+  min-width: 50px;
+}

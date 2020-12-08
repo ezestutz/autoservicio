@@ -28,3 +28,9 @@ Para utilizar la versión de producción:
 Después:
 
 > `npm run build`
+
+#
+
+## Aclaraciones
+
+Si bien se puede acceder a diferentes categorías de productos en el sitio y cada una de ellas tiene un encabezado personalizado, en todas las secciones aparecen unicamente los productos de la categoría "Cucurucho". Esto es para centrarme en el desarrollo de la aplicación y no en pensar y buscar imágenes para nuevos productos para las otras 7 categorías.

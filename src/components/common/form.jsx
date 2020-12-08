@@ -61,13 +61,14 @@ class MyForm extends Component {
     );
   }
 
-  renderInput(name, label, type = "text") {
+  renderInput(name, label, maxLength = 255, type = "text") {
     const { data, errors } = this.state;
     return (
       <Input
         name={name}
         value={data[name]}
         label={label}
+        maxLength={maxLength}
         error={errors[name]}
         onChange={this.handleChange}
         type={type}

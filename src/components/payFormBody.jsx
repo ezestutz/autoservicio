@@ -14,19 +14,9 @@ class PayFormBody extends MyForm {
 
   schema = {
     titular: Joi.string().max(255).required().label("Nombre del titular"),
-    tarjeta: Joi.string()
-      .min(0)
-      .max(16)
-      .regex(/[0-9]/)
-      .required()
-      .label("Número de tarjeta"),
-    expira: Joi.string().max(10).required().label("Fecha de expiración"),
-    codigo: Joi.string()
-      .min(0)
-      .max(3)
-      .regex(/[0-9]/)
-      .required()
-      .label("Código de seguridad"),
+    tarjeta: Joi.number().required().label("Número de tarjeta"),
+    expira: Joi.string().required().label("Fecha de expiración"),
+    codigo: Joi.number().required().label("Código de seguridad"),
   };
 
   doSubmit = () => {
@@ -72,9 +62,9 @@ class PayFormBody extends MyForm {
         </Modal>
         <Form onSubmit={this.handleSubmit}>
           {this.renderInput("titular", "Nombre del titular")}
-          {this.renderInput("tarjeta", "Número de tarjeta")}
-          {this.renderInput("expira", "Fecha de expiración", "date")}
-          {this.renderInput("codigo", "Código de seguridad")}
+          {this.renderInput("tarjeta", "Número de tarjeta", 16)}
+          {this.renderInput("expira", "Fecha de expiración", 10, "date")}
+          {this.renderInput("codigo", "Código de seguridad", 3)}
           <div className="d-flex justify-content-center mt-5">
             {this.renderButton("Pagar")}
           </div>

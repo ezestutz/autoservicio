@@ -4,7 +4,7 @@ import { Button, Card, Container, Image } from "react-bootstrap";
 const ProductDetails = ({ product }) => {
   return (
     <Container>
-      <Card className="p-3">
+      <Card className="p-3 shadow">
         <div className="text-center">
           <Image
             src={product.img}

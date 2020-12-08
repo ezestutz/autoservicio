@@ -5,6 +5,7 @@ import "../assets/css/Categories.css";
 import CardRow from "./common/cardRow";
 import { getCategories } from "../services/fakeCategoryService";
 import NavButtons from "./NavButtons";
+import TotalCarrito from "./TotalCarrito";
 
 class Categories extends Component {
   state = { options: [] };
@@ -22,7 +23,10 @@ class Categories extends Component {
           <img className="bannerLogo" src={logo} alt="Logo" />
         </div>
         <Container>
-          <h2 className="ml-5 my-5 text-uppercase">Elige una opción:</h2>
+          <div className="d-flex align-items-center justify-content-between px-5 my-5">
+            <h2 className="text-uppercase">Elige una opción:</h2>
+            <TotalCarrito />
+          </div>
           <CardRow options={this.state.options} />
           <NavButtons backLink="/" />
         </Container>

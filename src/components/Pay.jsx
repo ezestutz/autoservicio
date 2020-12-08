@@ -6,15 +6,13 @@ import PayForm from "./payForm";
 import PayHeader from "./payHeader";
 
 class Pay extends Component {
-  state = { total: 300 };
-
   render() {
     return (
       <div className="pagar">
         <img className="portadaLogo" src={logo} alt="Logo" />
         <Container className="py-5">
-          <PayHeader total={this.state.total} />
-          <PayForm total={this.state.total} />
+          <PayHeader total={this.props.totalPrice} />
+          <PayForm total={this.props.totalPrice} />
         </Container>
       </div>
     );

@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import logo from "../assets/img/logo.png";
 import "../assets/css/Category.css";
 import { getCategory } from "../services/fakeCategoryService";
+import TotalCarrito from "./TotalCarrito";
+import { Container } from "react-bootstrap";
 
 class CategoryHeader extends Component {
   state = { category: {} };
@@ -24,7 +26,10 @@ class CategoryHeader extends Component {
             alt={category.label}
           />
         </div>
-        <h2 className="ml-5 my-5 text-uppercase">{category.label}</h2>
+        <Container className="d-flex align-items-center justify-content-around my-5">
+          <h2 className="text-uppercase">{category.label}</h2>
+          <TotalCarrito />
+        </Container>
       </div>
     );
   }

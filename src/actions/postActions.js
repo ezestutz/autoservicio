@@ -1,8 +1,8 @@
-import { ADD_PRODUCT } from "./types";
+import { UPDATE_CART } from "./types";
 
-export const addProduct = (product, price) => (dispatch) => {
+export const updateCart = (cart, count, totalPrice) => (dispatch) => {
   dispatch({
-    type: ADD_PRODUCT,
-    payload: { product, price },
+    type: UPDATE_CART,
+    payload: { cart, count, totalPrice },
   });
 };

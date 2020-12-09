@@ -1,4 +1,4 @@
-import { ADD_PRODUCT } from "../actions/types";
+import { UPDATE_CART } from "../actions/types";
 
 const initialState = {
   count: 0,
@@ -8,14 +8,12 @@ const initialState = {
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case ADD_PRODUCT:
-      let newCart = state.cart;
-      newCart.push(action.payload.product);
+    case UPDATE_CART:
       return {
         ...state,
-        count: state.count + 1,
-        totalPrice: state.totalPrice + action.payload.price,
-        cart: newCart,
+        count: action.payload.count,
+        totalPrice: action.payload.totalPrice,
+        cart: action.payload.cart,
       };
     default:
       return state;

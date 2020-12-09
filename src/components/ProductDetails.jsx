@@ -1,11 +1,21 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addProduct } from "../actions/postActions";
+import { updateCart } from "../actions/postActions";
 import { Button, Card, Container, Image } from "react-bootstrap";
 
 class ProductDetails extends Component {
+  addProduct = (p) => {
+    let newCart = this.props.cart;
+    newCart.push(p);
+    this.props.updateCart(
+      newCart,
+      this.props.count + 1,
+      this.props.totalPrice + p.price
+    );
+  };
+
   render() {
-    const { product, addProduct } = this.props;
+    const { product } = this.props;
     return (
       <Container>
         <Card className="p-3 shadow">
@@ -36,7 +46,7 @@ class ProductDetails extends Component {
             <Button
               size="lg"
               variant="info"
-              onClick={() => addProduct(product, product.price)}
+              onClick={() => this.addProduct(product)}
             >
               Añadir al Carrito
             </Button>
@@ -49,6 +59,8 @@ class ProductDetails extends Component {
 
 const mapStateToProps = (state) => ({
   count: state.posts.count,
+  cart: state.posts.cart,
+  totalPrice: state.posts.totalPrice,
 });
 
-export default connect(mapStateToProps, { addProduct })(ProductDetails);
+export default connect(mapStateToProps, { updateCart })(ProductDetails);

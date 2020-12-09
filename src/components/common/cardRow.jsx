@@ -8,7 +8,10 @@ const CardRow = ({ options }) => {
   return (
     <Row className="mx-0 px-5 justify-content-between">
       {options.map((option) => (
-        <div className={width < 1001 ? "col-sm-6" : "col-sm-3"}>
+        <div
+          key={options.indexOf(option)}
+          className={width < 1001 ? "col-sm-6" : "col-sm-3"}
+        >
           <Link
             to={`/productos/${
               option.category

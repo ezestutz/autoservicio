@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Badge, Container, Table } from "react-bootstrap";
+import { updateCart } from "../actions/postActions";
+import { Button, Container, Table } from "react-bootstrap";
 import logo from "../assets/img/logo.png";
 import "../assets/css/Categories.css";
 import { getCategories, getCategory } from "../services/fakeCategoryService";
@@ -8,6 +9,21 @@ import NavButtons from "./NavButtons";
 import { Link } from "react-router-dom";
 
 class Details extends Component {
+  removeProduct = (p) => {
+    let newCart = this.props.cart;
+    newCart.splice(newCart.indexOf(p), 1);
+
+    this.props.updateCart(
+      newCart,
+      this.props.count - 1,
+      this.props.totalPrice - p.price
+    );
+  };
+
+  removeAll = () => {
+    this.props.updateCart([], 0, 0);
+  };
+
   componentDidMount() {
     this.setState({
       options: getCategories(),
@@ -23,20 +39,16 @@ class Details extends Component {
         <Container>
           {this.props.count > 0 ? (
             <div>
-              <div className="d-flex justify-content-around mt-5">
-                <Badge variant="success">
-                  <h2>Productos en carrito: {this.props.count}.</h2>
-                </Badge>
-                <Badge variant="success">
-                  <h2>Precio Total: ${this.props.totalPrice}.</h2>
-                </Badge>
-              </div>
+              <h2 className="text-center font-weight-bold mt-5">
+                Detalles de la Compra
+              </h2>
               <Table striped bordered hover className="mt-5 text-center shadow">
                 <thead>
                   <tr>
                     <th>Producto</th>
                     <th>Categoría</th>
                     <th>Precio</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -58,9 +70,41 @@ class Details extends Component {
                         {getCategory(product.category).label}
                       </td>
                       <td className="align-middle">${product.price}</td>
+                      <td className="align-middle">
+                        <Button
+                          variant="danger"
+                          onClick={() => {
+                            this.removeProduct(product);
+                          }}
+                        >
+                          Eliminar
+                        </Button>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
+              </Table>
+              <Table bordered className="text-center shadow">
+                <thead>
+                  <tr className="text-uppercase">
+                    <th className="align-middle">
+                      Carrito: {this.props.count}
+                    </th>
+                    <th className="align-middle">
+                      Total: ${this.props.totalPrice}
+                    </th>
+                    <th>
+                      <Button
+                        variant="danger"
+                        onClick={() => {
+                          this.removeAll();
+                        }}
+                      >
+                        Vaciar Carrito
+                      </Button>
+                    </th>
+                  </tr>
+                </thead>
               </Table>
             </div>
           ) : (
@@ -79,4 +123,4 @@ const mapStateToProps = (state) => ({
   totalPrice: state.posts.totalPrice,
 });
 
-export default connect(mapStateToProps, {})(Details);
+export default connect(mapStateToProps, { updateCart })(Details);

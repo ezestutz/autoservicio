@@ -9,7 +9,7 @@ class PayForm extends Component {
     return (
       <Card className="px-5 py-3 mb-5 shadow">
         <PayFormHeader />
-        <PayFormBody total={this.props.total} />
+        <PayFormBody />
       </Card>
     );
   }

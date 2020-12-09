@@ -48,10 +48,10 @@ class MyForm extends Component {
     this.setState({ data, errors });
   };
 
-  renderButton(label) {
+  renderButton(label, invalid = true) {
     return (
       <Button
-        disabled={this.validate()}
+        disabled={this.validate() || invalid}
         variant="success"
         type="submit"
         className="px-5"

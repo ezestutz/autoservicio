@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import Joi from "joi-browser";
 import { Container, Form, Modal, Button } from "react-bootstrap";
 import SweetAlert from "react-bootstrap-sweetalert";
@@ -66,7 +67,7 @@ class PayFormBody extends MyForm {
           {this.renderInput("expira", "Fecha de expiración", 10, "date")}
           {this.renderInput("codigo", "Código de seguridad", 3)}
           <div className="d-flex justify-content-center mt-5">
-            {this.renderButton("Pagar")}
+            {this.renderButton("Pagar", this.props.totalPrice < 1)}
           </div>
         </Form>
       </Container>
@@ -74,4 +75,9 @@ class PayFormBody extends MyForm {
   }
 }
 
-export default PayFormBody;
+const mapStateToProps = (state) => ({
+  totalPrice: state.posts.totalPrice,
+});
+
+//actions que utilizo en este componente
+export default connect(mapStateToProps, {})(PayFormBody);

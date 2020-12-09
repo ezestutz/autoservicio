@@ -11,8 +11,8 @@ class Pay extends Component {
       <div className="pagar">
         <img className="portadaLogo" src={logo} alt="Logo" />
         <Container className="py-5">
-          <PayHeader total={this.props.totalPrice} />
-          <PayForm total={this.props.totalPrice} />
+          <PayHeader />
+          <PayForm />
         </Container>
       </div>
     );

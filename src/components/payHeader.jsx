@@ -15,9 +15,16 @@ class PayHeader extends Component {
             </h2>
           </div>
           <div className="d-flex justify-content-center my-auto">
-            <Button size="md" variant="success" className="px-2 mr-1">
-              Detalles
-            </Button>
+            <Link to="/detalles">
+              <Button
+                size="md"
+                variant="success"
+                className="px-2 mr-1"
+                disabled={this.props.totalPrice < 1}
+              >
+                Detalles
+              </Button>
+            </Link>
             <Link to="/productos">
               <Button size="md" variant="danger" className="px-2 ml-1">
                 Cancelar

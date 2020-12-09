@@ -51,5 +51,4 @@ const mapStateToProps = (state) => ({
   count: state.posts.count,
 });
 
-//actions que utilizo en este componente
 export default connect(mapStateToProps, { addProduct })(ProductDetails);

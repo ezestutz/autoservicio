@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Container, Table } from "react-bootstrap";
+import { Badge, Container, Table } from "react-bootstrap";
 import logo from "../assets/img/logo.png";
 import "../assets/css/Categories.css";
 import { getCategories, getCategory } from "../services/fakeCategoryService";
@@ -24,10 +24,14 @@ class Details extends Component {
           {this.props.count > 0 ? (
             <div>
               <div className="d-flex justify-content-around mt-5">
-                <h2>Productos en carrito: {this.props.count}.</h2>
-                <h2>Precio Total: ${this.props.totalPrice}.</h2>
+                <Badge variant="success">
+                  <h2>Productos en carrito: {this.props.count}.</h2>
+                </Badge>
+                <Badge variant="success">
+                  <h2>Precio Total: ${this.props.totalPrice}.</h2>
+                </Badge>
               </div>
-              <Table striped bordered hover className="mt-5 text-center">
+              <Table striped bordered hover className="mt-5 text-center shadow">
                 <thead>
                   <tr>
                     <th>Producto</th>
